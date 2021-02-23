@@ -54,7 +54,7 @@
         app:layout_constraintBottom_toTopOf="@+id/graph_create"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nodes_number" />
+        app:layout_constraintTop_toBottomOf="@+id/sommets_confirm" />
 
     <Button
         android:id="@+id/graph_create"
@@ -73,4 +73,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sommets_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Confirmer les sommets"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nodes_number" />
 </androidx.constraintlayout.widget.ConstraintLayout>

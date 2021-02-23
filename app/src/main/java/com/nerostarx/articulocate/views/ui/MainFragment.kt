@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,9 +51,14 @@ class MainFragment : Fragment() {
         arcsRecycler.adapter = adapter
 
         nextButton.setOnClickListener {
-            if(graphNodes.text.isNotEmpty()){
-                viewModel.createGraph(graphNodes.text.toString().toInt())
+                viewModel.createGraph()
                 findNavController().navigate(R.id.to_result_nav)
+        }
+
+        binding.sommetsConfirm.setOnClickListener {
+            if(graphNodes.text.isNotEmpty()){
+                Toast.makeText(requireContext(), "ajout de noeuds...", LENGTH_SHORT).show();
+                viewModel.setNodesGraph(graphNodes.text.toString().toInt())
             }
         }
     }

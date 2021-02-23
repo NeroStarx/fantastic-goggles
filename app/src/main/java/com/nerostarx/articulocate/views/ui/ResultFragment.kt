@@ -30,13 +30,15 @@ class ResultFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        for(arc in viewModel.arcList){
+        binding.resultText.text = "Cycle hamiltonienne: ${viewModel.heuristique} \n " +
+                "Heuristique: ${viewModel.gettags()}"
+        /*for(arc in viewModel.arcList){
             viewModel.addEdge(arc.src,arc.dst)
-        }
+        }*/
 
-        val list = viewModel.getArticulationPoints(viewModel.graph)
+        //val list = viewModel.getArticulationPoints(viewModel.graph)
 
-        binding.resultText.text = list.toString()
+        //binding.resultText.text = list.toString()
 
         binding.returnButton.setOnClickListener {
             findNavController().navigate(R.id.back_tomain)
